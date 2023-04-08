@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="142px" viewBox="0 0 108 142" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>矩形备份 3</title>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="90.9114127%" gradientTransform="translate(0.500000,0.500000),scale(1.000000,0.757143),rotate(90.000000),scale(1.000000,0.851971),translate(-0.500000,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#DBE7D6" offset="0%"></stop>
+            <stop stop-color="#F1F6EF" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="笔记" transform="translate(-251.000000, -127.000000)">
+            <g id="编组-3备份" transform="translate(252.000000, 128.000000)">
+                <rect id="矩形备份-3" stroke-opacity="0.202405383" stroke="#B6C1B1" fill="url(#radialGradient-1)" x="0" y="0" width="106" height="140" rx="12"></rect>
+                <text id="📗" font-family="AppleColorEmoji, Apple Color Emoji" font-size="88" font-weight="normal" fill="#142B0B">
+                    <tspan x="3" y="105">📗</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
