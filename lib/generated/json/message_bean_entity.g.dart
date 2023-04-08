@@ -1,5 +1,5 @@
 import 'package:aibook/generated/json/base/json_convert_content.dart';
-import 'package:aibook/bean/message_bean_entity.dart';
+import 'package:aibook/talk/message_bean_entity.dart';
 
 MessageBeanEntity $MessageBeanEntityFromJson(Map<String, dynamic> json) {
 	final MessageBeanEntity messageBeanEntity = MessageBeanEntity();

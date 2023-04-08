@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../bean/message_bean_entity.dart';
+import '../message_bean_entity.dart';
 import '../../utils/time_utils.dart';
 
 class TalkTextMessage extends StatefulWidget {
@@ -32,14 +32,6 @@ class _TalkTextMessageState extends State<TalkTextMessage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          if (showTime)
-            Padding(
-              padding: EdgeInsets.only(bottom: 16.h),
-              child: Text(
-                TimeUtils.convertTime2diffString(widget.textMessage.time),
-                style: TextStyle(fontSize: 15.sp),
-              ),
-            ),
           Row(
             textDirection: isMe ? TextDirection.rtl : TextDirection.ltr,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -48,20 +40,32 @@ class _TalkTextMessageState extends State<TalkTextMessage> {
             children: [
               ConstrainedBox(
                 constraints: BoxConstraints.tightFor(height: 40.w, width: 40.w),
-                child: Image.asset(isMe ? "images/talk_avatar_me.png" : "images/talk_avatar_ai.png"),
+                child: Image.asset(isMe ? "images/me_avatar.png" : "images/ai_avatar.png"),
               ),
               SizedBox(width: 8.w),
               Container(
                 constraints: BoxConstraints(maxWidth: 220.w),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.w),
-                  color: isMe ? const Color(0xFFCBED9F) : const Color(0xFFDBE7D6),
+                  borderRadius: isMe
+                      ? const BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(2),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        )
+                      : const BorderRadius.only(
+                          topLeft: Radius.circular(2),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                  color: isMe ? const Color(0xFF1CFBF9) : const Color(0xFFFFFF).withAlpha(15),
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 11.h, horizontal: 16.w),
                   child: Text(
                     widget.textMessage.content,
-                    style: TextStyle(fontSize: 15.w),
+                    style: TextStyle(fontSize: 15.w, color: isMe ? Colors.black : Colors.white),
                   ),
                 ),
               ),

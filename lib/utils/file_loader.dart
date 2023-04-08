@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import '../bean/message_bean_entity.dart';
 import '../generated/json/base/json_convert_content.dart';
+import '../talk/message_bean_entity.dart';
 
 class FileLoader {
   static Future<Map<String, dynamic>> loadJson(String fileName) async {
