@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BookInput extends StatefulWidget {
-  BookInput(this.hint, {Key? key}) : super(key: key);
+class CommonInput extends StatefulWidget {
+  CommonInput(this.hint, {Key? key}) : super(key: key);
   String hint;
 
   @override
-  State<BookInput> createState() => _BookInputState();
+  State<CommonInput> createState() => _CommonInputState();
 }
 
-class _BookInputState extends State<BookInput> {
+class _CommonInputState extends State<CommonInput> {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(

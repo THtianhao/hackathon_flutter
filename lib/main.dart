@@ -1,7 +1,7 @@
-import 'package:aibook/home/book_route.dart';
+import 'package:aibook/home/aiBook/book_route.dart';
 import 'package:aibook/home/home_route.dart';
 import 'package:aibook/home/mj_route.dart';
-import 'package:aibook/home/sd_route.dart';
+import 'package:aibook/home/sd/sd_route.dart';
 import 'package:aibook/home/summery_route.dart';
 import 'package:aibook/talk/talk_provider.dart';
 import 'package:flutter/material.dart';

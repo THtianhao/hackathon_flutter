@@ -2,9 +2,9 @@ import 'package:aibook/utils/common_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/text_field_decoration.dart';
-import 'common_input.dart';
-import 'gradient_button.dart';
+import '../../utils/text_field_decoration.dart';
+import '../common_input.dart';
+import '../gradient_button.dart';
 
 class BookRoute extends StatefulWidget {
   const BookRoute({Key? key}) : super(key: key);
@@ -36,13 +36,13 @@ class _BookRouteState extends State<BookRoute> {
                   child: Column(
                     children: [
                       SizedBox(height: 24.h),
-                      BookInput("Title"),
+                      CommonInput("Title"),
                       SizedBox(height: 24.h),
-                      BookInput("Subject"),
+                      CommonInput("Subject"),
                       SizedBox(height: 24.h),
-                      BookInput("Language"),
+                      CommonInput("Language"),
                       SizedBox(height: 24.h),
-                      BookInput("Chapter"),
+                      CommonInput("Chapter"),
                     ],
                   ),
                 ),
