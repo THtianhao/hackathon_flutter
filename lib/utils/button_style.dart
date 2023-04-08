@@ -110,6 +110,28 @@ var grayBindButtonStyle = defaultElevatedStyle.copyWith(
   ),
 );
 
+var confirmElevatedStyle = ButtonStyle(
+  shape: MaterialStateProperty.all(
+    RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(30.h)),
+    ),
+  ),
+  textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+  foregroundColor: MaterialStateProperty.resolveWith((states) {
+    if (states.contains(MaterialState.disabled)) {
+      return Colors.black45;
+    }
+    return Colors.black87;
+  }),
+  backgroundColor: MaterialStateProperty.all(AppColor.primaryColor),
+  shadowColor: MaterialStateProperty.all(Colors.transparent),
+  overlayColor: MaterialStateProperty.resolveWith(
+        (states) {
+      return states.contains(MaterialState.pressed) ? null : null;
+    },
+  ),
+);
+
 var primaryBindButtonStyle = grayBindButtonStyle.copyWith(
   backgroundColor: MaterialStatePropertyAll(AppColor.primaryDeepColor.withAlpha(0x20)),
 );

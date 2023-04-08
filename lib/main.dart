@@ -1,4 +1,8 @@
+import 'package:aibook/home/book_route.dart';
 import 'package:aibook/home/home_route.dart';
+import 'package:aibook/home/mj_route.dart';
+import 'package:aibook/home/sd_route.dart';
+import 'package:aibook/home/summery_route.dart';
 import 'package:aibook/talk/talk_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -58,6 +62,12 @@ class _MyAppState extends State<MyApp> {
             focusColor: Colors.black87,
           ),
           home: const HomeRoute(),
+          routes: {
+            SDRoute.routeName: (context) => const SDRoute(),
+            MJRoute.routeName: (context) => const MJRoute(),
+            BookRoute.routeName: (context) => const BookRoute(),
+            SummeryRoute.routeName: (context) => const SummeryRoute(),
+          },
         );
       },
     );

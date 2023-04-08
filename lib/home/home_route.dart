@@ -1,10 +1,5 @@
-import 'package:aibook/home/home_tab.dart';
-import 'package:aibook/note/note_view.dart';
-import 'package:aibook/talk/talk_view.dart';
+import 'package:aibook/home/home_grid_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class HomeRoute extends StatefulWidget {
   const HomeRoute({Key? key}) : super(key: key);
@@ -22,68 +17,41 @@ class _HomeRouteState extends State<HomeRoute> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Stack(
-          children: [
-            Container(
-              constraints: const BoxConstraints.expand(),
-              child: const DecoratedBox(
-                decoration: BoxDecoration(color: Color(0xFFEEF6E8)),
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 10.h),
-                SizedBox(
-                  height: 44.h,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TabBar(
-                          labelPadding: EdgeInsets.zero,
-                          padding: EdgeInsets.zero,
-                          indicatorPadding: EdgeInsets.zero,
-                          controller: tabController,
-                          tabs: [HomeTab("对话", _currentIndex == 0), HomeTab("笔记", _currentIndex == 1)],
-                          indicator: BoxDecoration(),
-                          onTap: (index) {
-                            setState(() {
-                              _currentIndex = index;
-                            });
-                          },
-                        ),
-                      ),
-                      SizedBox(width: 130.w),
-                      GestureDetector(
-                        child: SvgPicture.asset("images/more.svg", width: 36.w, height: 36.h),
-                        onTap: () {
-                          showMaterialModalBottomSheet(
-                            expand: false,
-                            context: context,
-                            backgroundColor: Colors.transparent,
-                            builder: (context) => Image.asset("images/me.png"),
-                          );
-                        },
-                      ),
-                      SizedBox(width: 16.w)
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: TabBarView(
-                    controller: tabController,
-                    children: const [
-                      TalkView(),
-                      NoteView(),
-                    ],
-                  ),
-                )
-              ],
-            ),
-            Positioned(right: 0, bottom: 90, child: Image.asset("images/talk_to_note.png",width: 68.w))
-          ],
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/home_bg.png"),
+            fit: BoxFit.cover,
+          ),
         ),
+        child: Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              centerTitle: true,
+              // leading: SvgPicture.asset("images/appbar_back.svg"),
+              // actions: getActionByType(context, type: actionType),
+              title: const Text(
+                "Extension",
+                style: TextStyle(fontSize: 20),
+              ),
+              // titleTextStyle: getTitleStyleByType(type: titleType),
+              shadowColor: Colors.transparent,
+              backgroundColor: Colors.transparent,
+            ),
+            body: GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: <Widget>[
+                HomeGridItem(1, "images/home_item_1.png", "AI-Book"),
+                HomeGridItem(2, "images/home_item_2.png", "Stable diffusion"),
+                HomeGridItem(3, "images/home_item_3.png", "Midjourney"),
+                HomeGridItem(4, "images/home_item_4.png", "Summery"),
+                HomeGridItem(5, "images/home_item_5.png", "Charmming chat"),
+              ],
+            )),
       ),
     );
   }
