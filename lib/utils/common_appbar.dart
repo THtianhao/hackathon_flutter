@@ -13,7 +13,12 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: SvgPicture.asset("images/appbar_back.svg"),
+      leading: GestureDetector(
+        child: SvgPicture.asset("images/appbar_back.svg"),
+        onTap: () {
+          Navigator.of(context).pop();
+        },
+      ),
       // actions: getActionByType(context, type: actionType),
       title: Text(title ?? ""),
       centerTitle: true,
