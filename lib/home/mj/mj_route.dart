@@ -34,11 +34,13 @@ class _MJRouteState extends State<MJRoute> {
                 child: Column(
                   children: [
                     SizedBox(height: 24.h),
-                    CommonInput("Prompt"),
+                    CommonInput("Prompt",(value){}),
                   ],
                 ),
               ),
-              GradientButton("Generate"),
+              GradientButton("Generate",(){
+
+              }),
               SizedBox(height: 60.h,),
             ],
           ),

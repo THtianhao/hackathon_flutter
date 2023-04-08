@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CommonInput extends StatefulWidget {
-  CommonInput(this.hint, {Key? key}) : super(key: key);
+  CommonInput(this.hint, this.onChanged, {Key? key}) : super(key: key);
   String hint;
+  ValueChanged<String>? onChanged;
 
   @override
   State<CommonInput> createState() => _CommonInputState();
@@ -18,6 +19,7 @@ class _CommonInputState extends State<CommonInput> {
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: TextField(
+        onChanged: widget.onChanged,
         style: const TextStyle(color: Colors.white),
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(

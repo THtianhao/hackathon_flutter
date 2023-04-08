@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
 class GradientButton extends StatefulWidget {
-  GradientButton(this.text, {Key? key}) : super(key: key);
+  GradientButton(this.text, this.onPressed,{Key? key}) : super(key: key);
   String text;
+  VoidCallback? onPressed;
 
   @override
   State<GradientButton> createState() => _GradientButtonState();
@@ -25,7 +27,7 @@ class _GradientButtonState extends State<GradientButton> {
         ),
       ),
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: widget.onPressed,
           style: ButtonStyle(
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(

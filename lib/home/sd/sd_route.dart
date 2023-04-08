@@ -51,7 +51,7 @@ class _SDRouteState extends State<SDRoute> {
             child: Column(
               children: [
                 SizedBox(height: 24.h),
-                CommonInput("Prompt"),
+                CommonInput("Prompt",(value){}),
                 SizedBox(height: 24.h),
                 Expanded(
                   child: GridView.builder(
@@ -75,7 +75,9 @@ class _SDRouteState extends State<SDRoute> {
                     },
                   ),
                 ),
-                GradientButton("Generate"),
+                GradientButton("Generate",(){
+
+                }),
                 SizedBox(height: 60.h),
               ],
             ),
